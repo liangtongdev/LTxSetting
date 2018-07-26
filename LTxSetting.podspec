@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/liangtongdev/LTxSetting.git", :tag => "#{s.version}" }
 
   s.dependency 'LTxCore'
-  s.dependency 'LTxCamera/Scan'
+  s.dependency 'LTxCamera'
  
 
   s.default_subspecs = 'LTxSettingForSippr'
@@ -19,9 +19,6 @@ Pod::Spec.new do |s|
 
   # LTxSettingForSippr
   s.subspec 'LTxSettingForSippr' do |sp|
-  # sp.public_header_files = "LTxSetting/LTxSettingForSippr/LTxMessage.h"
-  # sp.source_files  =  "LTxSetting/LTxSettingForSippr/LTxMessage.{h,m}"
-    sp.dependency 'LTxCamera/Scan'
 
     # Model
     sp.subspec 'Model' do |ssp|
