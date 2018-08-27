@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "LTxSetting"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "关于/配置管理 "
   s.license      = "MIT"
   s.author             = { "liangtong" => "liangtongdev@163.com" }
@@ -12,6 +12,7 @@ Pod::Spec.new do |s|
 
   s.dependency 'LTxCore'
   s.dependency 'LTxCamera'
+  s.dependency 'LTxPopup'
  
 
   s.default_subspecs = 'LTxSettingForSippr'

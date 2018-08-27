@@ -8,6 +8,8 @@
 
 #import "LTxSettingForSipprFeedbackViewController.h"
 #import "LTxSettingForSipprViewModel.h"
+#import <LTxPopup/LTxPopup.h>
+
 @interface LTxSettingForSipprFeedbackViewController ()
 @property (nonatomic, strong) UITextView* opinionView;
 @property (nonatomic, strong) UIButton* submitBtn;
@@ -60,9 +62,9 @@
 /*反馈*/
 -(void)feedback{
     [_opinionView resignFirstResponder];
-    NSString* content = [_opinionView.text lt_trimmingWhitespace];
+    NSString* content = [_opinionView.text ltx_trimmingWhitespace];
     if ([content isEqualToString:@""]) {
-        [LTxCorePopup showToast:LTxLocalizedString(@"text_setting_feed_back_content_empty") onView:self.view];
+        [self showErrorMessage:LTxLocalizedString(@"text_setting_feed_back_content_empty")];
         return;
     }
     _submitBtn.enabled = NO;
@@ -74,14 +76,33 @@
         if (!errorTips) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [strongSelf.navigationController popViewControllerAnimated:true];
-                [LTxCorePopup showToast:LTxLocalizedString(@"text_setting_feed_back_success") onView:strongSelf.navigationController.view];
+                [strongSelf showErrorMessage:LTxLocalizedString(@"text_setting_feed_back_success")];
             });
         }else{
             dispatch_async(dispatch_get_main_queue(), ^{
                 strongSelf.submitBtn.enabled = YES;
-                [LTxCorePopup showToast:errorTips onView:strongSelf.view];
+                [strongSelf showErrorMessage:errorTips];
             });
         }
+    }];
+}
+
+/**
+ * 错误信息提示
+ **/
+-(void)showErrorMessage:(NSString*)errorMsg{
+    LTxPopupToastConfiguration* configuration = [LTxPopupToastConfiguration defaultConfiguration];
+    
+    configuration.message = errorMsg;
+    configuration.messageColor = [UIColor whiteColor];
+    configuration.messageFontSize = 15.f;
+    
+    [LTxPopupToast showLTxPopupToastWithConfiguration:configuration show:^{
+        //hook
+    } tap:^{
+        //hook
+    } dismiss:^{
+        //hook
     }];
 }
 
