@@ -149,8 +149,10 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/LTxCamera/LTxCamera.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/LTxCategories/LTxCategories.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/LTxCore/LTxCore.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/LTxEepMSippr/LTxEepMSippr.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/LTxPopup/LTxPopup.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/LTxSetting/LTxSetting.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework"
 fi
@@ -161,8 +163,10 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/LTxCamera/LTxCamera.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/LTxCategories/LTxCategories.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/LTxCore/LTxCore.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/LTxEepMSippr/LTxEepMSippr.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/LTxPopup/LTxPopup.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/LTxSetting/LTxSetting.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework"
 fi

@@ -8,7 +8,7 @@
 
 #import "LTxSettingForSipprUpdateHistoryTableViewController.h"
 #import "LTxSettingForSipprUpdateHistoryTableViewCell.h"
-#import "LTxSettingForSipprViewModel.h"
+#import <LTxEepMSippr/LTxEepMSippr.h>
 
 @interface LTxSettingForSipprUpdateHistoryTableViewController ()
 @property (nonatomic, strong) NSMutableArray* dataSource;
@@ -42,7 +42,7 @@ static NSString* LTxSettingForSipprUpdateHistoryTableViewCellIdentifier = @"LTxS
 
 -(void)updateHistoryFetch{
     __weak __typeof(self) weakSelf = self;
-    [LTxSettingForSipprViewModel appUpdateHistoryFetchComplete:^(NSString *errorTips, NSArray *updateHistory) {
+    [LTxEepMSettingViewModel appUpdateHistoryFetchComplete:^(NSString *errorTips, NSArray *updateHistory) {
         __strong __typeof(weakSelf)strongSelf = weakSelf;
         strongSelf.dataSource = [updateHistory mutableCopy];
         strongSelf.errorTips = errorTips;

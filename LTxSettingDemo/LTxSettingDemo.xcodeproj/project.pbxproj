@@ -176,8 +176,10 @@
 				"${BUILT_PRODUCTS_DIR}/LTxCamera/LTxCamera.framework",
 				"${BUILT_PRODUCTS_DIR}/LTxCategories/LTxCategories.framework",
 				"${BUILT_PRODUCTS_DIR}/LTxCore/LTxCore.framework",
+				"${BUILT_PRODUCTS_DIR}/LTxEepMSippr/LTxEepMSippr.framework",
 				"${BUILT_PRODUCTS_DIR}/LTxPopup/LTxPopup.framework",
 				"${BUILT_PRODUCTS_DIR}/LTxSetting/LTxSetting.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework",
 			);
@@ -189,8 +191,10 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LTxCamera.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LTxCategories.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LTxCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LTxEepMSippr.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LTxPopup.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LTxSetting.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSZipArchive.framework",
 			);

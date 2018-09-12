@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "LTxSetting"
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   s.summary      = "关于/配置管理 "
   s.license      = "MIT"
   s.author             = { "liangtong" => "liangtongdev@163.com" }
@@ -10,9 +10,8 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = "9.0"
   s.source       = { :git => "https://github.com/liangtongdev/LTxSetting.git", :tag => "#{s.version}" }
 
-  s.dependency 'LTxCore'
+  s.dependency 'LTxEepMSippr'
   s.dependency 'LTxCamera'
-  s.dependency 'LTxPopup'
  
 
   s.default_subspecs = 'LTxSettingForSippr'
@@ -26,11 +25,7 @@ Pod::Spec.new do |s|
       ssp.source_files  =  "LTxSetting/LTxSettingForSippr/Model/*.{h,m}"
       ssp.public_header_files = "LTxSetting/LTxSettingForSippr/Model/**/*.h"
     end
-    # ViewModel
-    sp.subspec 'ViewModel' do |ssp|
-      ssp.source_files  =  "LTxSetting/LTxSettingForSippr/ViewModel/*.{h,m}"
-      ssp.public_header_files = "LTxSetting/LTxSettingForSippr/ViewModel/**/*.h"
-    end
+
     # Views
     sp.subspec 'Views' do |ssp|
       ssp.source_files  =  "LTxSetting/LTxSettingForSippr/Views/*.{h,m}"
@@ -43,7 +38,6 @@ Pod::Spec.new do |s|
       ssp.source_files  =  "LTxSetting/LTxSettingForSippr/Controllers/*.{h,m}"
       ssp.public_header_files = "LTxSetting/LTxSettingForSippr/Controllers/**/*.h"
       ssp.dependency 'LTxSetting/LTxSettingForSippr/Views'
-      ssp.dependency 'LTxSetting/LTxSettingForSippr/ViewModel'
     end
     # Core
     sp.subspec 'Core' do |core|

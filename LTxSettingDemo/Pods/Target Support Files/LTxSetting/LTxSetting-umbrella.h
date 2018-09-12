@@ -16,7 +16,6 @@
 #import "LTxSettingForSipprUpdateHistoryTableViewController.h"
 #import "LTxSettingForSippr.h"
 #import "LTxSettingForSipprModel.h"
-#import "LTxSettingForSipprViewModel.h"
 #import "LTxSettingForSipprUpdateHistoryTableViewCell.h"
 
 FOUNDATION_EXPORT double LTxSettingVersionNumber;

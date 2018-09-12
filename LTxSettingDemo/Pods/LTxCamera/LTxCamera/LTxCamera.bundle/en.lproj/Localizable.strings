@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  Pods
+
+  Created by liangtong on 2018/8/31.
+  
+*/
+"OK" = "OK";
+"Back" = "Back";
+"Done" = "Done";
+"Cancel" = "Cancel";
+"Photos" = "Photos";
+"Videos" = "Videos";
+"Preview" = "Preview";
+"Full image" = "Full image";
+"Select a maximum of %td photos" = "Select a maximum of %td photos";
+"Allow %@ to access your album in \"Settings -> Privacy -> Photos\"" = "Allow %@ to access your album in \"Settings -> Privacy -> Photos\"";

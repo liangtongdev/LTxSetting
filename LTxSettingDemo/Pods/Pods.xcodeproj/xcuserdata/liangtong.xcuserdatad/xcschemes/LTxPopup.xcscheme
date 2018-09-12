@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8FA535E86CDD5C2F942EC860CFB6C7E2"
+               BlueprintIdentifier = "C695CA22BCAEEEC22410A52B17B98765"
                BlueprintName = "LTxPopup"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "LTxPopup.framework">

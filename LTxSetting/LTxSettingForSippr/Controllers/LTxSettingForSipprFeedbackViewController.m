@@ -7,7 +7,7 @@
 //
 
 #import "LTxSettingForSipprFeedbackViewController.h"
-#import "LTxSettingForSipprViewModel.h"
+#import <LTxEepMSippr/LTxEepMSippr.h>
 #import <LTxPopup/LTxPopup.h>
 
 @interface LTxSettingForSipprFeedbackViewController ()
@@ -64,45 +64,26 @@
     [_opinionView resignFirstResponder];
     NSString* content = [_opinionView.text ltx_trimmingWhitespace];
     if ([content isEqualToString:@""]) {
-        [self showErrorMessage:LTxLocalizedString(@"text_setting_feed_back_content_empty")];
+        [LTxEepMPopup showToast:LTxLocalizedString(@"text_setting_feed_back_content_empty")];
         return;
     }
     _submitBtn.enabled = NO;
     [self showAnimatingActivityView];
     __weak __typeof(self) weakSelf = self;
-    [LTxSettingForSipprViewModel userFeedbackWithOpinion:content complete:^(NSString *errorTips) {
+    [LTxEepMSettingViewModel userFeedbackWithOpinion:content complete:^(NSString *errorTips) {
         __strong __typeof(weakSelf)strongSelf = weakSelf;
         [strongSelf hideAnimatingActivityView];
         if (!errorTips) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [strongSelf.navigationController popViewControllerAnimated:true];
-                [strongSelf showErrorMessage:LTxLocalizedString(@"text_setting_feed_back_success")];
+                [LTxEepMPopup showToast:LTxLocalizedString(@"text_setting_feed_back_success")];
             });
         }else{
             dispatch_async(dispatch_get_main_queue(), ^{
                 strongSelf.submitBtn.enabled = YES;
-                [strongSelf showErrorMessage:errorTips];
+                [LTxEepMPopup showToast:errorTips];
             });
         }
-    }];
-}
-
-/**
- * 错误信息提示
- **/
--(void)showErrorMessage:(NSString*)errorMsg{
-    LTxPopupToastConfiguration* configuration = [LTxPopupToastConfiguration defaultConfiguration];
-    
-    configuration.message = errorMsg;
-    configuration.messageColor = [UIColor whiteColor];
-    configuration.messageFontSize = 15.f;
-    
-    [LTxPopupToast showLTxPopupToastWithConfiguration:configuration show:^{
-        //hook
-    } tap:^{
-        //hook
-    } dismiss:^{
-        //hook
     }];
 }
 

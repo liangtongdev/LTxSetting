@@ -17,4 +17,10 @@
 //二维码生成
 #import "LTxQRCodeGenerate.h"
 
+//相册
+#import "LTxCameraAblumViewController.h"
+#import "LTxCameraPhotoPickerViewController.h"
+#import "LTxCameraPreviewPageViewController.h"
+#import "LTxCameraPreviewViewController.h"
+
 #endif /* LTxCamera_h */

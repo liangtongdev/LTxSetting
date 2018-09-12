@@ -12,8 +12,6 @@
 //Model
 #import "LTxSettingForSipprModel.h"
 
-//ViewModel
-#import "LTxSettingForSipprViewModel.h"
 
 //ViewController
 #import "LTxSettingForSipprAboutViewController.h"
