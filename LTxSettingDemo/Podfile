@@ -4,7 +4,7 @@ use_frameworks!
 
 target 'LTxSettingDemo' do
     # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
-    pod 'LTxCore'
+    pod 'LTxCore',:git=>"https://github.com/liangtongdev/LTxCore.git"
     pod 'LTxCamera'
     pod 'LTxPopup'
     pod 'LTxSetting', :path => '../'

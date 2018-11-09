@@ -45,7 +45,7 @@ static NSString* LTxSettingForSipprUpdateHistoryTableViewCellIdentifier = @"LTxS
     [LTxEepMSettingViewModel appUpdateHistoryFetchComplete:^(NSString *errorTips, NSArray *updateHistory) {
         __strong __typeof(weakSelf)strongSelf = weakSelf;
         strongSelf.dataSource = [updateHistory mutableCopy];
-        strongSelf.errorTips = errorTips;
+        strongSelf.emptyDataSet.emptyDescription = errorTips;
         [strongSelf finishSipprRefreshing];
     }];
 }
