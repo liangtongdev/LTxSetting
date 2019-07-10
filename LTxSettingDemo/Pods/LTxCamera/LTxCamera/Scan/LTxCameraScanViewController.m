@@ -23,6 +23,11 @@
     
 }
 
+-(void)dealloc{
+    [self.session stopRunning];// 1、停止会话
+    [self.previewLayer removeFromSuperlayer];// 2、删除预览图层
+}
+
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     _scanResult = NO;
@@ -31,12 +36,8 @@
 }
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
+    _scanResult = YES;
     [self.scanView removeTimer];
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),^{
-        [self.session stopRunning];// 1、停止会话
-        [self.previewLayer removeFromSuperlayer];// 2、删除预览图层
-    });
-    
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
@@ -124,6 +125,28 @@
 -(void)setupCameraScanView{
     _scanView = [[LTxCameraScanView alloc] init];
     _scanView.translatesAutoresizingMaskIntoConstraints = NO;
+    if (_borderColor) {
+        _scanView.borderColor = _borderColor;
+    }
+    if (_borderWidth > 0) {
+        _scanView.borderWidth = _borderWidth;
+    }
+    if (_cornerColor) {
+        _scanView.cornerColor = _cornerColor;
+    }
+    if (_cornerWidth > 0) {
+        _scanView.cornerWidth = _cornerWidth;
+    }
+    if (_cornerLength > 0) {
+        _scanView.cornerLength = _cornerLength;
+    }
+    if (_scanAnimateImage) {
+        _scanView.scanAnimateImage = _scanAnimateImage;
+    }
+    if (_scanAnimateImageHeight > 0) {
+        _scanView.scanAnimateImageHeight = _scanAnimateImageHeight;
+    }
+    
     [self.view addSubview:_scanView];
     [self addConstraintsOnComponents];
     

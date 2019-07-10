@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "1100"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "09ADAB6A96B314DAD293321B0AEED27F"
+               BlueprintIdentifier = "AE15E0578B6E4F16D88EC0FECE8067F5"
                BuildableName = "Pods_LTxSettingDemo.framework"
                BlueprintName = "Pods-LTxSettingDemo"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "09ADAB6A96B314DAD293321B0AEED27F"
+            BlueprintIdentifier = "AE15E0578B6E4F16D88EC0FECE8067F5"
             BuildableName = "Pods_LTxSettingDemo.framework"
             BlueprintName = "Pods-LTxSettingDemo"
             ReferencedContainer = "container:Pods.xcodeproj">

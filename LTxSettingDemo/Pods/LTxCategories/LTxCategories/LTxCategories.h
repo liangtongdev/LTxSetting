@@ -34,6 +34,12 @@
 #import "UIButton+LTxLoading.h"//按钮上添加动画
 #import "UIDevice+LTxHardware.h"//设备硬件信息
 #import "UIImage+LTxGIF.h"//gif 图片展示
+#import "UIImage+LTxColor.h"//根据颜色生成图片
 #import "UIView+LTxNib.h"//从nib文件加载UIView
+#import "UIView+LTxToast.h"//Toast
+#import "UIView+LTxConstraint.h"//简单的约束
+#import "UIView+LTxCorner.h"//圆角
+#import "UILabel+LTxSpace.h"//Label的行间距
+#import "UINavigationController+LTxAnimation.h"//导航push/pop动画
 
 #endif /* LTxCategories_h */

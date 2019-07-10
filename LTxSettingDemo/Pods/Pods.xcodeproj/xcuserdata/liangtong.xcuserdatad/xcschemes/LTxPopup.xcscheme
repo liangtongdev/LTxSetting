@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "1100"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E2C04AACEF80D4AAD6D5AACEF20D9036"
+               BlueprintIdentifier = "B19B330C1AB01640EE0DE80394DF523D"
+               BuildableName = "LTxPopup.framework"
                BlueprintName = "LTxPopup"
-               ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "LTxPopup.framework">
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

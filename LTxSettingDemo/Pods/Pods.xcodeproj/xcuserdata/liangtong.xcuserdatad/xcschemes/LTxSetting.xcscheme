@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "1100"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7EF7958E6281D0E1E96594048216CF44"
+               BlueprintIdentifier = "6C428DF77C36E2E6E8107A793C4258B9"
+               BuildableName = "LTxSetting.framework"
                BlueprintName = "LTxSetting"
-               ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "LTxSetting.framework">
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

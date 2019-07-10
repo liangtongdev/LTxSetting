@@ -1,0 +1,14 @@
+${PODS_ROOT}/Target Support Files/Pods-LTxSettingDemo/Pods-LTxSettingDemo-frameworks.sh
+${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework
+${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework
+${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework
+${BUILT_PRODUCTS_DIR}/FMDBExtension/FMDBExtension.framework
+${BUILT_PRODUCTS_DIR}/LTxCamera/LTxCamera.framework
+${BUILT_PRODUCTS_DIR}/LTxCategories/LTxCategories.framework
+${BUILT_PRODUCTS_DIR}/LTxCore/LTxCore.framework
+${BUILT_PRODUCTS_DIR}/LTxEepMSippr/LTxEepMSippr.framework
+${BUILT_PRODUCTS_DIR}/LTxPopup/LTxPopup.framework
+${BUILT_PRODUCTS_DIR}/LTxSetting/LTxSetting.framework
+${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework
+${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework
+${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework

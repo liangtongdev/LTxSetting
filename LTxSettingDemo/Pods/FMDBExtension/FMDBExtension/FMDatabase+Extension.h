@@ -5,7 +5,7 @@
 //  Created by liang tong on 2018/10/9.
 //
 
-#import <FMDB/FMDB.h>
+#import <fmdb/FMDB.h>
 
 @interface FMDatabase (Extension)
 ///#begin

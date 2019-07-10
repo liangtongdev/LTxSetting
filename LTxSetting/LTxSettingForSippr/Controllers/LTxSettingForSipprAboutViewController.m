@@ -14,7 +14,8 @@
 @property (nonatomic, strong) UILabel* versionL;
 @property (nonatomic, strong) UIButton* historyBtn;
 
-@property (nonatomic, strong) UILabel* tipL;
+@property (nonatomic, strong) UILabel* tipL1;
+@property (nonatomic, strong) UILabel* tipL2;
 @end
 
 @implementation LTxSettingForSipprAboutViewController
@@ -57,22 +58,32 @@
     //更新历史按钮
     _historyBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     _historyBtn.translatesAutoresizingMaskIntoConstraints = NO;
-    [_historyBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [_historyBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     [_historyBtn setTitle:[NSString stringWithFormat:@"   %@   ",LTxLocalizedString(@"text_setting_about_history")] forState:UIControlStateNormal];
-    [_historyBtn setBackgroundColor:[LTxCoreConfig sharedInstance].skinColor];
+    [_historyBtn setBackgroundColor:[UIColor whiteColor]];
     _historyBtn.layer.cornerRadius = 5.f;
+    _historyBtn.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    _historyBtn.layer.borderWidth = 1.f;
     _historyBtn.clipsToBounds = YES;
     [_historyBtn addTarget:self action:@selector(showHistory) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_historyBtn];
     
     
-    _tipL = [[UILabel alloc] init];
-    _tipL.translatesAutoresizingMaskIntoConstraints = NO;
-    _tipL.text = [LTxCoreConfig sharedInstance].aboutTip;
-    _tipL.numberOfLines = 0;
-    _tipL.font = [UIFont systemFontOfSize:13];
-    _tipL.textColor = [UIColor darkGrayColor];
-    [self.view addSubview:_tipL];
+    _tipL1 = [[UILabel alloc] init];
+    _tipL1.translatesAutoresizingMaskIntoConstraints = NO;
+    _tipL1.text = [LTxCoreConfig sharedInstance].aboutTip1;
+    _tipL1.numberOfLines = 0;
+    _tipL1.font = [UIFont systemFontOfSize:11];
+    _tipL1.textColor = [UIColor darkGrayColor];
+    [self.view addSubview:_tipL1];
+    
+    _tipL2 = [[UILabel alloc] init];
+    _tipL2.translatesAutoresizingMaskIntoConstraints = NO;
+    _tipL2.text = [LTxCoreConfig sharedInstance].aboutTip2;
+    _tipL2.numberOfLines = 0;
+    _tipL2.font = [UIFont systemFontOfSize:9];
+    _tipL2.textColor = [UIColor darkGrayColor];
+    [self.view addSubview:_tipL2];
 }
 
 -(void)addConstraintsOnComponents{
@@ -89,12 +100,20 @@
     NSLayoutConstraint* btnTopConstraint = [NSLayoutConstraint constraintWithItem:_historyBtn attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:_versionL attribute:NSLayoutAttributeBottom multiplier:1.f constant:20];
     
     //提示 - 版权
-    NSLayoutConstraint* tLeading = [NSLayoutConstraint constraintWithItem:_tipL attribute:NSLayoutAttributeLeadingMargin relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeadingMargin multiplier:1.f constant:10];
-    NSLayoutConstraint* tTrailing = [NSLayoutConstraint constraintWithItem:_tipL attribute:NSLayoutAttributeTrailingMargin relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTrailingMargin multiplier:1.f constant:-10];
-    NSLayoutConstraint* tBottom = [NSLayoutConstraint constraintWithItem:_tipL attribute:NSLayoutAttributeBottomMargin relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottomMargin multiplier:1.f constant:-20];
+    NSLayoutConstraint* t2Leading = [NSLayoutConstraint constraintWithItem:_tipL2 attribute:NSLayoutAttributeLeadingMargin relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeadingMargin multiplier:1.f constant:8];
+    NSLayoutConstraint* t2Trailing = [NSLayoutConstraint constraintWithItem:_tipL2 attribute:NSLayoutAttributeTrailingMargin relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTrailingMargin multiplier:1.f constant:-8];
+    NSLayoutConstraint* t2Bottom = [NSLayoutConstraint constraintWithItem:_tipL2 attribute:NSLayoutAttributeBottomMargin relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottomMargin multiplier:1.f constant:-8.f];
+    
+    NSLayoutConstraint* t1Leading = [NSLayoutConstraint constraintWithItem:_tipL1 attribute:NSLayoutAttributeLeadingMargin relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeadingMargin multiplier:1.f constant:8];
+    NSLayoutConstraint* t1Trailing = [NSLayoutConstraint constraintWithItem:_tipL1 attribute:NSLayoutAttributeTrailingMargin relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTrailingMargin multiplier:1.f constant:-8];
+    NSLayoutConstraint* t1Bottom = [NSLayoutConstraint constraintWithItem:_tipL1 attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:_tipL2 attribute:NSLayoutAttributeTop multiplier:1.f constant:-6.f];
     
     //激活约束，等价于单独设置约束.active = YES;
-    [NSLayoutConstraint activateConstraints:@[nameXConstraint,nameYConstraint,versionXConstraint,versionTopConstraint,btnXConstraint,btnTopConstraint,tLeading,tTrailing,tBottom]];
+    [NSLayoutConstraint activateConstraints:@[nameXConstraint,nameYConstraint,
+                                              versionXConstraint,versionTopConstraint,
+                                              btnXConstraint,btnTopConstraint,
+                                              t2Leading,t2Trailing,t2Bottom,
+                                              t1Leading,t1Trailing,t1Bottom]];
 }
 
 -(void)showHistory{

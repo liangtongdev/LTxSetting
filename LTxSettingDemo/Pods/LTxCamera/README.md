@@ -29,12 +29,12 @@ LTxCamera is available in CocoaPods, specify it in your *Podfile*:
 相片选择，设置最多选择数量
 
 ```Objective-C
-        LTxCameraAblumViewController* ablumVC = [[LTxCameraAblumViewController alloc] init];
-        ablumVC.photoPickerDelegate = self;
-        ablumVC.maxImagesCount  =  9;
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self presentViewController:ablumVC animated:YES completion:nil];
-        });
+    LTxCameraAblumViewController* ablumVC = [[LTxCameraAblumViewController alloc] init];
+    ablumVC.photoPickerDelegate = self;
+    ablumVC.maxImagesCount  =  9;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self presentViewController:ablumVC animated:YES completion:nil];
+    });
 ```
 
 回调包含图片、文件地址
@@ -57,45 +57,51 @@ LTxCamera is available in CocoaPods, specify it in your *Podfile*:
 仿微信的拍照/拍摄，设置小视频的格式、最长时间（秒）
 
 ```Objective-C
-        LTxCameraShootViewController* cameraShootVC = [[LTxCameraShootViewController alloc] init];
-        cameraShootVC.allowTakePhoto = YES;
-        cameraShootVC.allowRecordVideo = YES;
-        cameraShootVC.maxRecordDuration = 15;
-        cameraShootVC.shootDoneCallback = ^(UIImage* image, NSURL* videoPath, PHAsset *asset){
+    LTxCameraShootViewController* cameraShootVC = [[LTxCameraShootViewController alloc] init];
+    cameraShootVC.allowTakePhoto = YES;
+    cameraShootVC.allowRecordVideo = YES;
+    cameraShootVC.maxRecordDuration = 15;
+    cameraShootVC.shootDoneCallback = ^(UIImage* image, NSURL* videoPath, PHAsset *asset){
             
-        };
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self presentViewController:cameraShootVC animated:NO completion:nil];
-        });  
-}
+    };
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self presentViewController:cameraShootVC animated:NO completion:nil];
+    });  
 ```
 
 
 ### Qrcode
 
-
-![](https://github.com/liangtongdev/LTxCamera/blob/master/screenshots/qrcode.png)
+![](https://github.com/liangtongdev/LTxCamera/blob/master/screenshots/qr-scan.png)
 
 #### Usage
 
-二维码扫描，自动感应设备光线提示开灯
+二维码扫描，自动感应设备光线提示开灯。支持自定义边框颜色，扫描动画图片；
+亦可继承该Controller，重写「scanCompleteWithQRCode:」方法。
 
 ```Objective-C
-        LTxCameraScanViewController* scanVC = [[LTxCameraScanViewController alloc] init];
-        scanVC.scanCallback = ^(NSString *qrcode) {
-            NSLog(@"qrcode : %@",qrcode);
-        };
-        [self.navigationController pushViewController:scanVC animated:NO];
-}
+    LTxCameraScanViewController* scanVC = [[LTxCameraScanViewController alloc] init];
+    scanVC.scanAnimateImage = [UIImage imageNamed:@"QRCodeScanningLineGrid"];
+    scanVC.scanAnimateImageHeight = 100.f;
+    scanVC.scanCallback = ^(NSString *qrcode) {
+        NSLog(@"qrcode : %@",qrcode);
+    };
+    [self.navigationController pushViewController:scanVC animated:NO];
 ```
+
+
+
+![](https://github.com/liangtongdev/LTxCamera/blob/master/screenshots/qrcode.png)
 
 二维码生成，颜色可定制
 
 ```Objective-C
-        [LTxQRCodeGenerate fillQRImageWithImageView:_imageView qrString:@"Hello world!"];
-}
+    [LTxQRCodeGenerate fillQRImageWithImageView:_imageView qrString:@"Hello world!"];
 ```
 
+## Contacts
+
+liangtongdev@163.com
 
 ## License
 

@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "LTxSettingForSipprFeedbackViewController.h"
+#import "LTxSettingForSippr.h"
 
 @interface ViewController ()
 
@@ -21,7 +21,7 @@
 }
 
 - (IBAction)feedbackAction:(UIButton *)sender {
-    LTxSettingForSipprFeedbackViewController* feedbackVC = [[LTxSettingForSipprFeedbackViewController alloc] init];
+    LTxSettingForSipprAboutViewController* feedbackVC = [[LTxSettingForSipprAboutViewController alloc] init];
     
     [self.navigationController pushViewController:feedbackVC animated:YES];
 }
